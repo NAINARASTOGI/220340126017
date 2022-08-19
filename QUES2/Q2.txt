@@ -1,0 +1,39 @@
+1. Search for EC2 service in the search bar in the AWS console.
+2. Click of Launch Instance
+3. Under Names and Tags section, give a name to your Instance
+4. Under Application and OS Images (Amazon Machine Image) select the Ubuntu OS
+4.1 Under AMI select the Ubuntu 20.04 Free Tier
+5- Instance type is t2.micro (free tier)
+6. Under Key pair menu click of Create a new key pair option
+    If you already have a key pair you can select it from the drop down menu
+7. Under Network Settings, select the Create security group under Firewall and allow the sssh traffic from anywhere
+8-If you want to insrease the configure storage then increase 
+9. Now, click on Launch Instance
+10. After the instance is in running state, click on it.
+11. In Security menu, click on Security group
+11.1 In inbound rules edit the inbound rule.
+11.2 In the type drop down select Custom TCP.
+11.3 Add port range as 80
+11.4 Add Source as Anywhere-IPv4
+11.5 Repeat the same steps for adding SSH on port 22
+10. Click on Save rules
+11. Go back to instances and select your instance and click of connect
+    you will see a connect again click on it and go to ssh client.
+12. Do the require steps fro ssh client
+13. Go to your host terminal and then go to that directory where key is there .
+    ->then chmod 400 diot22_lab.pem
+14- ssh -i "diot22_lab.pem" ubuntu@ec2-3-96-130-88.ca-central-1.compute.amazonaws.com
+ after that you will be entered in the instance
+15. After that 
+    sudo apt install update
+    sudo apt install upgrade
+16. After that 
+    sudo apt install apache2
+    next,
+    sudo service apache2 status
+    if it is active ok .
+
+17. Check on the host machine using instance public key:80
+    http://3.96.130.88:80    
+
+18. Connection is correct and you will be able to see the apache page.

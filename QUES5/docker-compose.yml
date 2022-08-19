@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    mqtt-broker :
+        image : eclipse-mosquitto
+        hostname : mqtt-broker
+        container_name : mqtt-broker
+        expose :
+            - "1883"
+        ports :
+            - 6502:1883
+        volumes :
+            - /home/rajesh/Documents/IOT/220340126017/QUES5/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    subscriberexam :
+        build : .
+        container_name : subscriberexam
+        hostname : sub
+        depends_on :
+            - mqtt-broker

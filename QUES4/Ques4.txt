@@ -1,0 +1,13 @@
+->Create a Dockerfile 
+->And write the image you want to use
+    ->FROM python:3.10.4-alpine3.16 (this command load the image if not exist locall)
+      WORKDIR /usr/nancy  (Create a work directory inside the container)
+      COPY factorial.py /usr/nancy  (Copy the file into the container)
+      CMD ["python3", "factorial.py"]  (after all that using this it will execute the file)\
+      
+-> make a .py file and write the factorial code inside into
+
+-> After that run the commands:-
+    1-sudo docker build -t factorial . (sudo docker build -d image name and path)
+    2-then check the container running states from cmd (sudo docker ps)
+    3-sudo docker run -it factorial

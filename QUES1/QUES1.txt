@@ -1,0 +1,16 @@
+ 
+
+COMMAND--->
+mosquitto_pub -d -q 1 -h "demo.thingsboard.io" -t "v1/devices/me/telemetry" -u "diot1234" -f /home/rajesh/Documents/IOT/220340126017/QUES1/Data.json
+
+OUTPUT--->
+
+Client mosqpub|19704-diot-022 sending CONNECT
+Client mosqpub|19704-diot-022 received CONNACK
+Client mosqpub|19704-diot-022 sending PUBLISH (d0, q1, r0, m1, 'v1/devices/me/telemetry', ... (94 bytes))
+Client mosqpub|19704-diot-022 received PUBACK (Mid: 1)
+Client mosqpub|19704-diot-022 sending DISCONNECT
+
+
+
+
